@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{% block title %}home{% endblock %}</title>
+		<meta name="author" content="zhao shicong">
+		<script type='text/javascript' src="{{url_for('static', filename='js/jquery-1.5.1.min.js') }}"></script>
+		<script type='text/javascript' src="{{url_for('static', filename='js/jquery-ui-1.8.13.custom.min.js') }}"></script>		
+		<link type='text/css' rel='stylesheet' href="{{url_for('static', filename='css/cupertino/jquery-ui-1.8.13.custom.css') }}"/>
+		<link type='text/css' rel='stylesheet' href="{{url_for('static', filename='css/screen.css') }}"/>
+		<link type='text/css' rel='stylesheet' href="{{url_for('static', filename='renren/base.css') }}"/>
+		<!-- Date: 2011-06-14 -->
+	</head>
+	<body>
+		<div id='head'>
+			<div id='container'>
+				<img src="{{url_for('static', filename='img/logo.png')}}"/>
+				<input type="search"><img src="{{url_for('static', filename='img/search.png')}}"/>
+				<div id="login">
+					<a href="login">我来自</a>
+					<a><img src="{{url_for('static', filename='img/renren.png')}}"/></a>
+					<a><img src="{{url_for('static', filename='img/weibo.png')}}"/></a>
+					<a><img src="{{url_for('static', filename='img/qq.png')}}"/></a>
+					<a><img src="{{url_for('static', filename='img/taobao.png')}}"/></a>
+					<a><img src="{{url_for('static', filename='img/douban.png')}}"/></a>
+<!-- 					<a href="product/share">分享产品</a> -->
+				</div>
+			</div>
+			
+		</div>
+		<hr class="space"/>
+		<div id='body'>
+			
+			<div id='container'>
+				{% block content %}
+				
+				{% endblock %}
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

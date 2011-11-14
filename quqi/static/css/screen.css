@@ -1,0 +1,70 @@
+body{
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size:13px;
+	margin: 0;
+	padding: 0;
+}
+
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.hide{
+	display: none;
+}
+.clear{
+	clear: both;
+}
+.caption{
+	font-size: 2.0em;
+	text-align: center;
+	vertical-align:middle;
+	line-height: 100%;
+}
+form{
+	margin: 15px;
+}
+form input[type=text], form textarea{
+	width : 200px;
+}
+label{
+	font-weight: bold;
+}
+hr {
+	background:#d9d9d9;color:#d9d9d9;
+}
+hr.space{
+	background:#fff;color:#fff;visibility:hidden;
+}
+a, a :visited{
+	text-decoration: none;
+	color: #3B5998;
+}
+p {
+	color: #808080;
+}
+table{
+	width:100%;
+
+}
+th{
+	color: #808080;
+	text-align: left;
+}
+h5 {
+	color: #808080;
+	font-size: 14px;
+	margin: 8px 0;
+}
+h5 a{
+	font-weight: normal;
+	font-size: 13px;
+}
+.item {background:url('../img/gray.png') repeat; margin:10px 15px 10px 0; padding: 10px;}
+#head {background:url('../img/gray.png') repeat; padding: 5px 0;}
+#head input[type=search]{width:380px; height:24px; margin: 10px 10px 0px 30px; line-height: 10px; vertical-align:top;}
+#container {width:960px; margin:auto;}
+#login {float:right; line-height: 38px;}
+#login a{margin:5px; float:left;}

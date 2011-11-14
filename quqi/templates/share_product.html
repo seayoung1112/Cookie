@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+分享
+{% endblock %}
+{%block content%}
+<script type='text/javascript' src="{{url_for('static', filename='js/jquery.form.js') }}"></script>
+<script>
+	$(document).ready(function() { 
+	    var options = { 
+	        beforeSubmit:  function(){
+	        	
+	        },  // pre-submit callback 
+	        success:       function(response){
+	        	$('img#picture').attr('src', response);
+	        	$('#pic-url').attr('value', response.slice(0,-13));
+	        }  // post-submit callback 
+	    }; 
+	    // bind form using 'ajaxForm' 
+	    $('form#upload-photo').ajaxForm(options); 	    
+	}); 	
+</script>
+<form action='/product/share' method='post' id='create-form'>
+	<table>
+		<thead>
+			
+		</thead>
+		<tbody>
+			<tr>
+				<th>{{form.name.label}}*</th>
+				<td>{{form.name()}}</td>
+			</tr>
+			<tr>
+				<th>{{form.link.label}}*</th>
+				<td>{{form.link()}}</td>
+			</tr>
+			<tr>
+				<th>{{form.description.label}}</th>
+				<td>{{form.description(class='vDateTimeField')}}</td>
+			</tr>
+				
+			<tr>
+				<th></th>
+				<td><input type='submit' value='创建' class='button'/>
+			</tr>
+		</tbody>
+	</table>
+	<input type="hidden" name="picture" id="pic-url"/>
+	{{csrf_token()}}
+</form>
+<div id='upload-dlg'>
+	<label>来张靓照吧</label>
+	<img id="picture"/>
+	<form method='post' action='/product/uploadPicture' enctype='multipart/form-data' id='upload-photo'>
+		<input type='hidden' name='id'/>
+		{{csrf_token()}}
+		
+		
+		<input type='file' class='button' name='picture'/>
+		<input type='submit' value='上传' class='button' id='upload-photo'/>
+	</form> 
+</div>
+{% endblock %}
